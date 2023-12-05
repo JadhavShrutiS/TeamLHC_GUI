@@ -48,6 +48,7 @@ public class ProjectBoardController implements Initializable {
         lbl_title.setText("Welcome " + user.getFirstName() + " " + user.getLastName()+"!");
 
         ArrayList<String> projects = new ArrayList<String>();
+        
         projects.add("1st project");
         projects.add("2nd project");
         projects.add ("3rd project");
