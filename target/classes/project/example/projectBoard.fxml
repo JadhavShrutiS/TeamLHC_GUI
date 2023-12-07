@@ -16,12 +16,12 @@
          <opaqueInsets>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </opaqueInsets></Label>
-      <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#btnSettingsClicked" text="Settings" translateX="420.0" translateY="-120.0">
+      <Button styleClass="icons" fx:id="settingsButton" mnemonicParsing="false" onAction="#btnSettingsClicked" text="Settings" translateX="420.0" translateY="-120.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#btnLogoutClicked" text="Logout" translateX="-425.0" translateY="-183.0">
+      <Button styleClass="icons" fx:id="logoutButton" mnemonicParsing="false" onAction="#btnLogoutClicked" text="Logout" translateX="-425.0" translateY="-183.0">
          <font>
             <Font size="20.0" />
          </font>
@@ -31,7 +31,7 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Button fx:id="createProject" mnemonicParsing="false" onAction="#btnCreateClicked" text="+" translateY="250.0">
+      <Button styleClass="projectButtons" fx:id="createProject" mnemonicParsing="false" onAction="#btnCreateClicked" text="+" translateY="250.0">
          <font>
             <Font size="23.0" />
          </font>

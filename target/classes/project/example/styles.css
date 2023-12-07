@@ -1,16 +1,33 @@
 .root{
     -fx-font-size: 16pt;
     -fx-font-family: "Helvetica";
-    -fx-base: #87C7D1;
-    -fx-background: #CAE8EB;
+    -fx-base: #81B337;
+    -fx-background: white;
 }
 
-.button {
-    -fx-background-color: #7B7F80;
+.textField {
+    -fx-background-color: #e0e0d8;
+    -fx-text-fill: black;
+}
+
+.buttons {
+    -fx-background-color: #a5a5a0;
+    -fx-text-fill: black;
+    -fx-border-color : black;
+    -fx-border-style : solid;
+}
+
+.border {
+    -fx-border-color : #81B337;
+    -fx-border-style : solid;
+    -fx-border-width : 20px;
+}
+
+.icons {
+    -fx-background-color: #81B337;
+}
+
+.projectButtons {
+    -fx-background-color: #7CA938;
     -fx-text-fill: white;
-}
-
-.unique {
-    -fx-background-color: pink;
-    -fx-text-fill: blue;
 }

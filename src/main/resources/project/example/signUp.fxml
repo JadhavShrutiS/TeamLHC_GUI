@@ -8,40 +8,40 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683" prefWidth="960" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.example.SignUpController">
+<VBox styleClass= "border" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683" prefWidth="960" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.example.SignUpController">
     <children>
-        <Label alignment="TOP_CENTER" text="LHC PROJECT MANAGER" translateY="50.0">
+        <Label alignment="TOP_CENTER" text="LHC PROJECT MANAGER" translateY="40.0">
          <font>
             <Font size="65.0" />
          </font>
          <opaqueInsets>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </opaqueInsets></Label>
-      <TextField fx:id="txt_firstName" maxWidth="350.0" prefHeight="60.0" prefWidth="65.0" promptText="Please enter First Name" translateY="65.0">
+      <TextField styleClass= "textField" fx:id="txt_firstName" maxWidth="350.0" prefHeight="60.0" prefWidth="65.0" promptText="Please enter First Name" translateY="65.0">
          <font>
             <Font size="28.0" />
          </font>
       </TextField>
-        <Button fx:id="SignUpButton" alignment="TOP_CENTER" onAction="#btnSignUpClicked" text="Sign Up" translateY="380.0">
+        <Button styleClass= "buttons" fx:id="SignUpButton" alignment="TOP_CENTER" onAction="#btnSignUpClicked" text="Sign Up" translateY="380.0">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <TextField fx:id="txt_lastName" maxWidth="350.0" prefHeight="60.0" prefWidth="65.0" promptText="Please enter Last Name">
+      <TextField styleClass= "textField" fx:id="txt_lastName" maxWidth="350.0" prefHeight="60.0" prefWidth="65.0" promptText="Please enter Last Name">
          <font>
             <Font size="28.0" />
          </font>
       </TextField>
-      <TextField fx:id="txt_Email" maxWidth="350.0" prefHeight="60.0" prefWidth="65.0" promptText="Please enter Email">
+      <TextField styleClass= "textField" fx:id="txt_Email" maxWidth="350.0" prefHeight="60.0" prefWidth="65.0" promptText="Please enter Email">
          <font>
             <Font size="28.0" />
          </font>
       </TextField>
-      <TextField fx:id="txt_password" maxWidth="350.0" prefHeight="60.0" prefWidth="65.0" promptText="Please enter Password">
+      <TextField styleClass= "textField" fx:id="txt_password" maxWidth="350.0" prefHeight="60.0" prefWidth="65.0" promptText="Please enter Password">
          <font>
             <Font size="28.0" />
          </font>
       </TextField>
-      <TextField fx:id="txt_passwordConfirm" maxWidth="350.0" prefHeight="60.0" prefWidth="65.0" promptText="Please confirm Password">
+      <TextField styleClass= "textField" fx:id="txt_passwordConfirm" maxWidth="350.0" prefHeight="60.0" prefWidth="65.0" promptText="Please confirm Password">
          <font>
             <Font size="28.0" />
          </font>
