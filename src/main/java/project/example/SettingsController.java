@@ -49,11 +49,37 @@ public class SettingsController {
     @FXML
     private void btnSaveClicked()throws IOException{
         //save user info
+        String firstname = txt_changeFirstName;
+        String lastName = txt_changeLastName;
+        String email = txt_changeEmail;
+        String password = txt_changePassword;
+        String passwordConfirm = txt_changePasswordConfirm;
         ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
         String email = projectFACADE.getUser.getEmailID();
         String password = projectFACADE.getUser.getPassword();
         projectFACADE.logout();
         projectFACADE.login(email,password);
+
+        if(!(password.equals(passwordConfirm)))
+        {
+            lbl_error.setText("passwords must match");
+            return;
+        }
+
+        ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
+
+        //create account
+        if(!projectFACADE.signUp(firstName, lastName, email, password))
+        {
+            lbl_error.setText("User could not be created:(");
+        }
+        
+        boolean login = projectFACADE.login(email,password);
+        if(login)
+        {
+            lbl_error.setText("Login Successful");
+        }
+        App.setRoot("projectBoard"); //go to project board of the user logged inz
         //facade to change user info
     }
     
