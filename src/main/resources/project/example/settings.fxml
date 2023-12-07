@@ -67,11 +67,17 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Label text="Label" />
       <Button fx:id="SaveButton" mnemonicParsing="false" onAction="#btnSaveClicked" prefHeight="47.0" prefWidth="81.0" text="Save" translateY="-220.0">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <Label prefWidth="500.0" text="" onAction="#btnSaveClicked" textAlignment="CENTER" textFill="#ff0000" translateX="-121.0" translateY="-250.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

@@ -91,6 +91,18 @@ public class User {
     public String getPassword() {
         return this.userPassword;
     }
+    public void setName(String aN) {
+        this.firstName=aN;
+    }
+    public void setLastname(String aN) {
+        this.lastName=aN;
+    }
+    public void setEmail(String aN) {
+        this.Email=aN;
+    }
+    public void setPassword(String aN) {
+        this.password=aN;
+    }
 
     
 }
