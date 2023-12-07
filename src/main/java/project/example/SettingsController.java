@@ -53,7 +53,7 @@ public class SettingsController {
         String email = projectFACADE.getUser.getEmailID();
         String password = projectFACADE.getUser.getPassword();
         projectFACADE.logout();
-        projectFACADE.login()
+        projectFACADE.login(email,password);
         //facade to change user info
     }
     
