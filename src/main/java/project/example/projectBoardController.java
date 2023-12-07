@@ -47,18 +47,28 @@ public class ProjectBoardController implements Initializable {
         User user = projectFACADE.getUser();
         lbl_title.setText("Welcome " + user.getFirstName() + " " + user.getLastName()+"!");
         String email = user.getEmailID();
+<<<<<<< HEAD
         ArrayList<String> projects = new ArrayList<String>();
         projects.add(projectFACADE.getProjectByUser(email));
         //projects.add("2nd project");
         projects.add ("3rd project");
+=======
+        ArrayList<Project> projects = projectFACADE.getProjectByUser(email);
+>>>>>>> 2616df48438fcf9ad2dfcf735dcefaea29161395
         
         GridPane projectGrid = new GridPane();
         project_layout.getChildren().add(projectGrid);
     
-        for(int i=0; i < projects.size(); i++){
-            Button button = new Button(projects.get(i));
-            projectGrid.add(button, i, 0);
+        if (projects != null) {
+            for(int i=0; i < projects.size(); i++) {
+                Button button = new Button(projects.get(i).getProjectName());
+                projectGrid.add(button, i, 0);
+            }
         }
+
+
+        
+        
 
 
     }
