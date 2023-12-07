@@ -55,10 +55,13 @@ public class ProjectBoardController implements Initializable {
         GridPane projectGrid = new GridPane();
         project_layout.getChildren().add(projectGrid);
     
-        for(int i=0; i < projects.size(); i++){
-            Button button = new Button(projects.get(i));
-            projectGrid.add(button, i, 0);
+        if (projects != null) {
+            for(int i=0; i < projects.size(); i++) {
+                Button button = new Button(projects.get(i).getProjectName());
+                projectGrid.add(button, i, 0);
+            }
         }
+        
 
 
     }
