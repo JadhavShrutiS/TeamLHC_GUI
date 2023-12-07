@@ -41,6 +41,11 @@ public class ProjectBoardController implements Initializable {
     }
     //need to have other projects that can be clicked on
 
+    @FXML
+    private void btnCreateClicked() throws IOException{
+        App.setRoot("project");
+    }
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
@@ -60,7 +65,7 @@ public class ProjectBoardController implements Initializable {
         }
 
 
-        
+
         
 
 
