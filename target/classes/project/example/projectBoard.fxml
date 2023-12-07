@@ -31,6 +31,11 @@
             <Font size="21.0" />
          </font>
       </Label>
+      <Button mnemonicParsing="false" text="+" translateY="250.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
