@@ -4,7 +4,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-
+import model.*;
 public class SettingsController {
     
     @FXML
@@ -39,14 +39,21 @@ public class SettingsController {
 
     @FXML
     private void btnLogoutClicked()throws IOException {
+        ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
         //save users projects etc
         //facade logout
+        projectFACADE.logout();
         App.setRoot("login");
     }
 
     @FXML
     private void btnSaveClicked()throws IOException{
         //save user info
+        ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
+        String email = projectFACADE.getUser.getEmailID();
+        String password = projectFACADE.getUser.getPassword();
+        projectFACADE.logout();
+        projectFACADE.login(email,password);
         //facade to change user info
     }
     
