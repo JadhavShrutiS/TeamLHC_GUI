@@ -118,6 +118,7 @@ public class DataLoader extends DataConstants{
 				UUID taskID = UUID.fromString((String)TaskJSON.get(TASK_ID));
 				ArrayList<User> Users = new ArrayList<User>();
 				JSONArray user = (JSONArray)TaskJSON.get(TASK_USER_ID);
+
 				for(int j=0;j<user.size();j++)
 				{
 					Users.add(UserList.getInstance().getUser(UUID.fromString((String)user.get(j))));

@@ -49,14 +49,14 @@ public class SettingsController {
     @FXML
     private void btnSaveClicked()throws IOException{
         //save user info
-        String firstname = txt_changeFirstName;
-        String lastName = txt_changeLastName;
-        String email = txt_changeEmail;
-        String password = txt_changePassword;
-        String passwordConfirm = txt_changePasswordConfirm;
+        String firstname = txt_changeFirstName.getText();
+        String lastName = txt_changeLastName.getText();
+        String email = txt_changeEmail.getText();
+        String password = txt_changePassword.getText();
+        String passwordConfirm = txt_changePasswordConfirm.getText();
         ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
-        String email = projectFACADE.getUser.getEmailID();
-        String password = projectFACADE.getUser.getPassword();
+        String initalemail = projectFACADE.getUser().getEmailID();
+        String intialpassword = projectFACADE.getUser().getPassword();
         projectFACADE.logout();
         projectFACADE.login(email,password);
 
