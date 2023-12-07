@@ -12,8 +12,11 @@ public class UI {
 
 
         app.signUp("Atticus", "Madden", "amadden@gmail.com", "12345");
-        app.getTasks();
-        app.logout();
+        
+        System.out.println(app.getUsers());
+        System.out.println(app.getTasks());
+        //app.logout();
+        /* 
         app.login("amadden@gmail.com", "12345");
         User currentUser = app.getUser();
         System.out.print("Logged in as: " + currentUser.getFirstName()+" "+currentUser.getLastName());
@@ -49,6 +52,7 @@ public class UI {
 
         app.logout();//to save the tasks to json file
         System.out.println(getTask);
+        */
         
     }
     public static void main(String[] args) {

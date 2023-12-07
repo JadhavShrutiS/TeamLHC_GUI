@@ -8,4 +8,6 @@ module com.example {
 
     opens model to javafx.fxml;
     exports model;
+
+    
 }

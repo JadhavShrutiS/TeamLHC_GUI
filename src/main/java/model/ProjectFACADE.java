@@ -85,6 +85,9 @@ public class ProjectFACADE {
     public void addCommentProject(Project project) {
 
     }
+    public ArrayList<User> getUsers(){
+        return UserList.getInstance().getUsers();
+    }
 
     public void logout() {
         UserList.getInstance().saveUsers();
