@@ -31,7 +31,7 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" text="+" translateY="250.0">
+      <Button fx:id="createProject" mnemonicParsing="false" onAction="#btnCreateClicked" text="+" translateY="250.0">
          <font>
             <Font size="23.0" />
          </font>
