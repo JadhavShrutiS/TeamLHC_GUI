@@ -32,6 +32,9 @@ public class SettingsController {
     private TextField txt_changePasswordConfirm;
 
     @FXML
+    private Label errorlabel;
+
+    @FXML
     private void btnHomeClicked()throws IOException {
         //go back to projectBoard
         App.setRoot("projectBoard");
@@ -55,30 +58,30 @@ public class SettingsController {
         String password = txt_changePassword.getText();
         String passwordConfirm = txt_changePasswordConfirm.getText();
         ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
-        String initalemail = projectFACADE.getUser().getEmailID();
-        String intialpassword = projectFACADE.getUser().getPassword();
-        projectFACADE.logout();
-        projectFACADE.login(email,password);
 
         if(!(password.equals(passwordConfirm)))
         {
-            lbl_error.setText("passwords must match");
+            errorlabel.setText("passwords must match");
+            projectFACADE.getUser().setPassword(txt_changePassword);
             return;
         }
-
-        ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
-
+        if(!(txt_changeFirstName.equals("")))
+        {
+            projectFACADE.getUser().setName(txt_changeFirstName);
+        }
+        if(!(txt_changeLastName.equals("")))
+        {
+            projectFACADE.getUser().setLastname(txt_changeLastName);
+        }
+        if(!(txt_changeEmail.equals("")))
+        {
+            projectFACADE.getUser().setEmail(txt_changeEmail);
+        }
         //create account
-        if(!projectFACADE.signUp(firstName, lastName, email, password))
-        {
-            lbl_error.setText("User could not be created:(");
-        }
-        
-        boolean login = projectFACADE.login(email,password);
-        if(login)
-        {
-            lbl_error.setText("Login Successful");
-        }
+        String email = projectFACADE.getUser.getEmailID();
+        String password = projectFACADE.getUser.getPassword();
+        projectFACADE.logout();
+        projectFACADE.login(email,password);
         App.setRoot("projectBoard"); //go to project board of the user logged inz
         //facade to change user info
     }
