@@ -98,10 +98,10 @@ public class User {
         this.lastName=aN;
     }
     public void setEmail(String aN) {
-        this.Email=aN;
+        this.userEmail=aN;
     }
     public void setPassword(String aN) {
-        this.password=aN;
+        this.userPassword=aN;
     }
 
     

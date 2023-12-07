@@ -3,6 +3,7 @@ package project.example;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.*;
 public class SettingsController {
@@ -62,24 +63,24 @@ public class SettingsController {
         if(!(password.equals(passwordConfirm)))
         {
             errorlabel.setText("passwords must match");
-            projectFACADE.getUser().setPassword(txt_changePassword);
+            projectFACADE.getUser().setPassword(password);
             return;
         }
-        if(!(txt_changeFirstName.equals("")))
+        if(!(firstname.equals("")))
         {
-            projectFACADE.getUser().setName(txt_changeFirstName);
+            projectFACADE.getUser().setName(firstname);
         }
-        if(!(txt_changeLastName.equals("")))
+        if(!(lastName.equals("")))
         {
-            projectFACADE.getUser().setLastname(txt_changeLastName);
+            projectFACADE.getUser().setLastname(lastName);
         }
-        if(!(txt_changeEmail.equals("")))
+        if(!(email.equals("")))
         {
-            projectFACADE.getUser().setEmail(txt_changeEmail);
+            projectFACADE.getUser().setEmail(email);
         }
         //create account
-        String email = projectFACADE.getUser.getEmailID();
-        String password = projectFACADE.getUser.getPassword();
+        email = projectFACADE.getUser().getEmailID();
+        password = projectFACADE.getUser().getPassword();
         projectFACADE.logout();
         projectFACADE.login(email,password);
         App.setRoot("projectBoard"); //go to project board of the user logged inz

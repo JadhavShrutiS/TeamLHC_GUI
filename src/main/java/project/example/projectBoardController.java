@@ -66,14 +66,20 @@ public class ProjectBoardController implements Initializable {
         test.add("1st project");
         test.add("2nd project");
         test.add("3rd project");
+        test.add("4th project");
+        test.add("5th project");
+        test.add("6th project");
+        test.add("7th project");
 
         GridPane projectGrid = new GridPane();
         projectGrid.setTranslateY(-180);
         projectGrid.setMaxWidth(700);
         projectGrid.setHgap(150);
+        projectGrid.setVgap(100);
 
         project_layout.getChildren().add(projectGrid);
     
+        int rowIndex = 0;
         if (test != null) {
             for(int i=0; i < test.size(); i++) {
                 //Button button = new Button(projects.get(i).getProjectName());
@@ -83,8 +89,13 @@ public class ProjectBoardController implements Initializable {
                 Label label = new Label(test.get(i));
                 //System.out.println(projects.get(i).getProjectName());
                 
-                projectGrid.add(button, i, 0);
-
+                int columnIndex=i-(3*rowIndex);
+                projectGrid.add(button,columnIndex, rowIndex);
+                if((i+1)%3 == 0)
+                {
+                    rowIndex++;
+                    
+                }
                 //projectGrid.add(label,-1,-1);
 
                 //projectGrid.add(projectGrid, i, i);

@@ -72,7 +72,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label fx:id="errorlabel" onAction="#bt" prefWidth="500.0" text="" textAlignment="CENTER" textFill="#ff0000" translateX="-121.0" translateY="-250.0">
+      <Label fx:id="errorlabel" prefWidth="500.0" text="" textAlignment="CENTER" textFill="#ff0000" translateX="-121.0" translateY="-250.0">
          <font>
             <Font size="18.0" />
          </font>
