@@ -10,6 +10,7 @@ public class ProjectFACADE {
     private ProjectBoard projectBoard;
     private Task task;
     private Project project;
+    private Project currentProject;
     private static ProjectFACADE projectFACADE;
 
     public static ProjectFACADE getInstance()
@@ -82,9 +83,16 @@ public class ProjectFACADE {
         return ProjectBoard.getInstance().getProjectByUser(Email);
     }
 
-    public void addCommentProject(Project project) {
-
+    public void setCurrentProject(String name)
+    {
+        currentProject = getProject(name);
     }
+
+    public Project getProject()
+    {
+        return currentProject;
+    }
+
     public ArrayList<User> getUsers(){
         return UserList.getInstance().getUsers();
     }

@@ -42,7 +42,6 @@ public class ProjectBoardController implements Initializable {
         //ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
         //projectFACADE.logout();
         App.setRoot("login");
-        
     }
     
     @FXML
@@ -108,9 +107,11 @@ public class ProjectBoardController implements Initializable {
                     @Override
                     public void handle(ActionEvent event) {
                         System.out.println(button.getText()+ "was clicked");
+
                         //set current project in facade by project name
+                        //projectFACADE.setCurrentProject(button.getText());
+                        
                         //change screen
-                        //app.set root
                         try {
                             App.setRoot("project");
                         } catch (IOException e) {
@@ -122,12 +123,6 @@ public class ProjectBoardController implements Initializable {
                 
             }
         }
-
-
-
-        
-
-
     }
 
 }

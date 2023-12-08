@@ -9,14 +9,14 @@
 
 <VBox fx:id="project_layout" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683" prefWidth="960" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.example.ProjectController">
     <children>
-        <Label alignment="TOP_CENTER" prefHeight="73.0" prefWidth="657.0" text="Projects">
+        <Label fx:id="lbl_projectName" alignment="TOP_CENTER" prefHeight="73.0" prefWidth="657.0" text="Project">
          <font>
             <Font size="50.0" />
          </font>
          <opaqueInsets>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </opaqueInsets></Label>
-      <Button fx:id="backButton" mnemonicParsing="false" text="&lt;" translateX="-430.0" translateY="-80.0" />
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#btnBackClicked" text="&lt;" translateX="-430.0" translateY="-80.0" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
