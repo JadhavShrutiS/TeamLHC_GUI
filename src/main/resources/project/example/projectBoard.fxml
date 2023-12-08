@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="project_layout" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683" prefWidth="960" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.example.ProjectBoardController">
+<VBox fx:id="projectboard_layout" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683" prefWidth="960" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.example.ProjectBoardController">
     <children>
         <Label alignment="TOP_CENTER" text="Projects" translateY="50.0">
          <font>
@@ -16,12 +16,12 @@
          <opaqueInsets>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </opaqueInsets></Label>
-      <Button styleClass="icons" fx:id="settingsButton" mnemonicParsing="false" onAction="#btnSettingsClicked" text="Settings" translateX="420.0" translateY="-120.0">
+      <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#btnSettingsClicked" styleClass="icons" text="Settings" translateX="420.0" translateY="-120.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button styleClass="icons" fx:id="logoutButton" mnemonicParsing="false" onAction="#btnLogoutClicked" text="Logout" translateX="-425.0" translateY="-183.0">
+      <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#btnLogoutClicked" styleClass="icons" text="Logout" translateX="-425.0" translateY="-183.0">
          <font>
             <Font size="20.0" />
          </font>
@@ -31,7 +31,7 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Button styleClass="projectButtons" fx:id="createProject" mnemonicParsing="false" onAction="#btnCreateClicked" text="+" translateY="250.0">
+      <Button fx:id="createProject" mnemonicParsing="false" onAction="#btnCreateClicked" styleClass="projectButtons" text="+" translateY="260.0">
          <font>
             <Font size="23.0" />
          </font>
