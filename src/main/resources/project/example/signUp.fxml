@@ -10,7 +10,7 @@
 
 <VBox styleClass= "border" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683" prefWidth="960" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.example.SignUpController">
     <children>
-        <Label alignment="TOP_CENTER" text="LHC PROJECT MANAGER" translateY="40.0">
+        <Label styleClass= "logo" alignment="TOP_CENTER" text="LHC PROJECT MANAGER" translateY="40.0">
          <font>
             <Font size="65.0" />
          </font>
