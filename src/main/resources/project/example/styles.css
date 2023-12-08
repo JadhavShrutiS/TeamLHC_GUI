@@ -1,7 +1,7 @@
 .root{
     -fx-font-size: 16pt;
     -fx-font-family: "Helvetica";
-    -fx-base: #81B337;
+    -fx-base: black;
     -fx-background: white;
 }
 
@@ -31,6 +31,12 @@
     -fx-background-color: #7CA938;
     -fx-text-fill: white;
 }
+
+.logo {
+    -fx-background-color: #E4F5D3;
+    -fx-font-size: 50pt;
+}
+
 .scroll-bar:vertical {
     -fx-pref-width: 16.5;
     -fx-padding: 3;
@@ -39,4 +45,3 @@
     -fx-pref-height: 16.5;
     -fx-padding: 3;
 }
-
