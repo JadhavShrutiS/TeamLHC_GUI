@@ -37,7 +37,10 @@ public class ProjectBoardController implements Initializable {
     private void btnLogoutClicked() throws IOException{
         //save users projects etc
         //basically facade logout
+        //ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
+        //projectFACADE.logout();
         App.setRoot("login");
+        
     }
     
     @FXML

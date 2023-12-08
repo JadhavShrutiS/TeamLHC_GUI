@@ -61,14 +61,13 @@ public class SignUpController {
         {
             lbl_error.setText("User could not be created:(");
         }
-        
         boolean login = projectFACADE.login(email,password);
         if(login)
         {
             lbl_error.setText("Login Successful");
         }
         //adds to json!!! doesn't do it yet
-
+        //projectFACADE.logout();
         App.setRoot("projectBoard");
         
 

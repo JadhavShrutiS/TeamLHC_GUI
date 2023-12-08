@@ -43,10 +43,8 @@ public class SettingsController {
 
     @FXML
     private void btnLogoutClicked()throws IOException {
-        ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
-        //save users projects etc
-        //facade logout
-        projectFACADE.logout();
+        //ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
+        //projectFACADE.logout();
         App.setRoot("login");
     }
 
