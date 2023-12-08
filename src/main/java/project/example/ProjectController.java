@@ -10,6 +10,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.ProjectFACADE;
@@ -43,26 +45,44 @@ public class ProjectController implements Initializable {
         columns.add("To Do");
         columns.add("Doing");
         columns.add("Done");
+        columns.add("1");
+        columns.add("2");
+
+        ArrayList<String> tasks = new ArrayList<String>();
+        tasks.add("task1");
+        tasks.add("task2");
+        tasks.add("task3");
 
         lbl_projectName.setText("ProjectName");
+        ScrollPane scroll = new ScrollPane();
+        project_layout.getChildren().add(scroll);
+        
         HBox hbox = new HBox();
         hbox.setMaxWidth(850);
         hbox.setMaxHeight(480);
-        hbox.setTranslateY(-40);
-        project_layout.getChildren().add(hbox);
+        scroll.setContent(hbox);
+        scroll.setMinHeight(570);
+        scroll.setTranslateY(-60);
+
+        //project_layout.getChildren().add(hbox);
         for(int i=0;i<columns.size();i++)
         {
             Label label = new Label(columns.get(i));
             //hbox.getChildren().addAll(label);
             VBox vbox = new VBox();
-            vbox.setMinHeight(480);
+            String cssLayout="-fx-border-color: black;\n" +
+            "-fx-border-insets: 5;\n" +
+            "-fx-border-width: 3;\n" +
+            "-fx-border-style: solid;\n";
+            vbox.setStyle(cssLayout);
+            vbox.setMinHeight(550);
             vbox.setMinWidth(250);
             //vbox.setTranslateX(i*100);
             vbox.setAlignment(Pos.TOP_CENTER);
             hbox.getChildren().add(vbox);
             vbox.getChildren().add(label);
+
         }
-        
 
     }
 
