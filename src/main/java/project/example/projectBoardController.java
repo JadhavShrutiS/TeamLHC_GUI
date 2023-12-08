@@ -58,8 +58,8 @@ public class ProjectBoardController implements Initializable {
         lbl_title.setText("Welcome " + user.getFirstName() + " " + user.getLastName()+"!");
         
         //get user projects
-        String email = user.getEmailID();
-        ArrayList<Project> projects = projectFACADE.getProjectByUser(email);
+        //String email = user.getEmailID();
+        //ArrayList<Project> projects = projectFACADE.getProjectByUser(email);
         
         //test project buttons
         ArrayList<String> test = new ArrayList<String>();
