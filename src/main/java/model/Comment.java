@@ -1,5 +1,5 @@
 package model;
-import java.sql.Date;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -17,7 +17,7 @@ public class Comment {
     {
         this.comment = Comment;
         this.userID = user.getId();
-        this.date = new java.sql.Date(System.currentTimeMillis());
+        this.date = new java.util.Date(System.currentTimeMillis());
     }
 
     /**
