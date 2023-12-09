@@ -8,36 +8,58 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.ScrollPane.ScrollBarPolicy;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Paint;
-import model.ProjectFACADE;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
-import model.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import model.ProjectFACADE;
 
-public class ProjectController implements Initializable {
+public class AddTaskController implements Initializable{
 
     @FXML
     private Button backButton;
 
     @FXML
-    private VBox project_layout;
+    private Button cancelButton;
 
     @FXML
     private Label lbl_projectName;
 
     @FXML
-    private void btnBackClicked() throws IOException{
-        ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
-        //projectFACADE.saveAll();
+    private VBox project_layout;
+
+    @FXML
+    private Button saveButton;
+
+    @FXML
+    private ChoiceBox<?> taskType;
+
+    @FXML
+    private VBox addTaskDialog;
+
+    @FXML
+    private void btnBackClicked(ActionEvent event) throws IOException {
+        //save all
         App.setRoot("projectBoard");
+    }
+
+    @FXML
+    private void btnCancelClicked(ActionEvent event) throws IOException {
+        App.setRoot("project");
+
+    }
+
+    @FXML
+    private void btnSaveClicked(ActionEvent event) throws IOException {
+        //save input from all fields
+        //save project tasks etc
+        App.setRoot("project");
+
     }
 
     @Override
@@ -58,6 +80,8 @@ public class ProjectController implements Initializable {
         tasks.add("task3");
 
         lbl_projectName.setText("ProjectName");
+        StackPane stackPane = new StackPane();
+        project_layout.getChildren().add(stackPane);
         ScrollPane scroll = new ScrollPane();
         project_layout.getChildren().add(scroll);
         HBox hbox = new HBox();
@@ -106,25 +130,6 @@ public class ProjectController implements Initializable {
                 taskLabel.setMinWidth(200);
                 vbox.getChildren().add(taskLabel);
             }
-            Button addTaskButton = new Button("+");
-            vbox.getChildren().add(addTaskButton);
-
-            addTaskButton.setOnAction((EventHandler<ActionEvent>) new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    System.out.println(addTaskButton.getText()+ "was clicked");
-
-                    //set current project in facade by project name
-                    //projectFACADE.setCurrentProject(button.getText());
-                    
-                    //change screen
-                    try {
-                        App.setRoot("addTask");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
         }
         VBox vbox = new VBox();
         String cssVbox="-fx-border-color: grey;\n" +
@@ -138,31 +143,8 @@ public class ProjectController implements Initializable {
         vbox.setMinHeight(540);
         vbox.setMinWidth(250);
         hbox.getChildren().add(vbox);
-        Button addColumnButton=new Button("+");
-        String cssButton="-fx-background-color:#BCC0B7;\n"+
-            "-fx-border-color: black;\n"+
-            "-fx-border-radius: 5;\n";
-        addColumnButton.setStyle(cssButton);
-        vbox.setAlignment(Pos.CENTER);
-        vbox.getChildren().add(addColumnButton);
 
-        addColumnButton.setOnAction((EventHandler<ActionEvent>) new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println(addColumnButton.getText()+ "was clicked");
-
-                //set current project in facade by project name
-                //projectFACADE.setCurrentProject(button.getText());
-                
-                //change screen
-                try {
-                    App.setRoot("addColumn");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }); 
-        
+        stackPane.getChildren().addAll(scroll,addTaskDialog);
     }
 
 }

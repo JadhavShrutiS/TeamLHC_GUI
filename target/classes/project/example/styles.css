@@ -1,7 +1,7 @@
 .root{
     -fx-font-size: 16pt;
     -fx-font-family: "Helvetica";
-    -fx-base: black;
+    -fx-base: #E4F5D3;
     -fx-background: white;
 }
 
@@ -44,4 +44,10 @@
 .scroll-bar:horizontal {
     -fx-pref-height: 16.5;
     -fx-padding: 3;
+}
+.boxBorder{
+    -fx-border-color: #000000;
+    -fx-border-style : solid;
+    -fx-border-width: 2px;
+    -fx-background-color: white;
 }

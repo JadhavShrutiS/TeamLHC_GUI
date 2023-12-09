@@ -72,9 +72,9 @@ public class DataLoader extends DataConstants{
 				{
 					JSONObject commentJSON = (JSONObject)comments.get(j);
 					UUID commentUserID = UUID.fromString((String)commentJSON.get(PROJECT_COMMENT_USER_ID));
-					//Date date = Date.valueOf((String)commentJSON.get(PROJECT_COMMENT_DATE));
+					Date date = Date.valueOf((String)commentJSON.get(PROJECT_COMMENT_DATE));
 					String commentString = (String)commentJSON.get(PROJECT_COMMENT_DATE);
-					//projectComments.add(new Comment(commentUserID, date, commentString));
+					projectComments.add(new Comment(commentUserID, date, commentString));
 				}
 				ArrayList<Column> projectColumns = new ArrayList<Column>();
 				JSONArray columns = (JSONArray)projectJSON.get(PROJECT_COLUMNS);
@@ -132,9 +132,9 @@ public class DataLoader extends DataConstants{
 				{
 					JSONObject commentJSON = (JSONObject)comments.get(j);
 					UUID commentUserID = UUID.fromString((String)commentJSON.get(TASK_COMMENT_USER_ID));
-					//Date date = Date.valueOf((String)commentJSON.get(TASK_COMMENT_DATE));
+					Date date = Date.valueOf((String)commentJSON.get(TASK_COMMENT_DATE));
 					String commentString = (String)commentJSON.get(TASK_COMMENT_STRING);
-					//taskComments.add(new Comment(commentUserID, date, commentString));
+					taskComments.add(new Comment(commentUserID, date, commentString));
 				}
 				ArrayList<String> subtasks = new ArrayList<String>();
 				JSONArray subtask = (JSONArray)TaskJSON.get(TASK_SUBTASKS);

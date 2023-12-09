@@ -115,7 +115,6 @@ public class ProjectBoardController implements Initializable {
                         try {
                             App.setRoot("project");
                         } catch (IOException e) {
-                            // TODO Auto-generated catch block
                             e.printStackTrace();
                         }
                     }

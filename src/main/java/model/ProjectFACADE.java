@@ -103,6 +103,13 @@ public class ProjectFACADE {
         DataWriter.saveProjects();
     }
     
+    public void saveAll()
+    {
+        UserList.getInstance().saveUsers();
+        TaskList.getInstance().saveTasks();
+        DataWriter.saveProjects();
+    }
+
     public void writeFile(ArrayList<Project> output , String fileName){
         try{
             FileWriter file = new FileWriter(fileName);
