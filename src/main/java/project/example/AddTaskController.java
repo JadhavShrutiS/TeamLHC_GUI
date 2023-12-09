@@ -92,8 +92,10 @@ public class AddTaskController implements Initializable{
         tasks.add("task3");
 
         lbl_projectName.setText("ProjectName");
+        
         StackPane stackPane = new StackPane();
         project_layout.getChildren().add(stackPane);
+
         ScrollPane scroll = new ScrollPane();
         project_layout.getChildren().add(scroll);
         HBox hbox = new HBox();

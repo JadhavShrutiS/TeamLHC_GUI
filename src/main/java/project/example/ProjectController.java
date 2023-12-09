@@ -113,10 +113,8 @@ public class ProjectController implements Initializable {
                 @Override
                 public void handle(ActionEvent event) {
                     System.out.println(addTaskButton.getText()+ "was clicked");
-
                     //set current project in facade by project name
                     //projectFACADE.setCurrentProject(button.getText());
-                    
                     //change screen
                     try {
                         App.setRoot("addTask");
@@ -150,10 +148,8 @@ public class ProjectController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println(addColumnButton.getText()+ "was clicked");
-
                 //set current project in facade by project name
                 //projectFACADE.setCurrentProject(button.getText());
-                
                 //change screen
                 try {
                     App.setRoot("addColumn");
