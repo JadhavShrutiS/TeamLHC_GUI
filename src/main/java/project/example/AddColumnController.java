@@ -20,7 +20,10 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import model.ProjectFACADE;
 
-public class AddTaskController implements Initializable{
+public class AddColumnController implements Initializable {
+
+    @FXML
+    private VBox addColumnDialog;
 
     @FXML
     private Button backButton;
@@ -38,19 +41,7 @@ public class AddTaskController implements Initializable{
     private Button saveButton;
 
     @FXML
-    private ChoiceBox<String> taskType;
-
-    @FXML
-    private VBox addTaskDialog;
-
-    @FXML
-    private TextField txt_TaskDesc;
-
-    @FXML
-    private TextField txt_TaskPriority;
-
-    @FXML
-    private TextField txt_Taskname;
+    private TextField txt_ColumnName;
 
     @FXML
     private void btnBackClicked(ActionEvent event) throws IOException {
@@ -61,21 +52,17 @@ public class AddTaskController implements Initializable{
     @FXML
     private void btnCancelClicked(ActionEvent event) throws IOException {
         App.setRoot("project");
-
     }
 
     @FXML
     private void btnSaveClicked(ActionEvent event) throws IOException {
         //save input from all fields
         //save project tasks etc
-        String task = taskType.getValue();
         App.setRoot("project");
-
     }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        taskType.getItems().add("Feature");
         ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
         //lbl_projectName.setText(projectFACADE.getProject().getProjectName());
 
@@ -156,7 +143,7 @@ public class AddTaskController implements Initializable{
         vbox.setMinWidth(250);
         hbox.getChildren().add(vbox);
 
-        stackPane.getChildren().addAll(scroll,addTaskDialog);
+        stackPane.getChildren().addAll(scroll,addColumnDialog);
     }
 
 }

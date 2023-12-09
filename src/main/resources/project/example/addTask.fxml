@@ -21,14 +21,14 @@
       <Button fx:id="backButton" mnemonicParsing="false" onAction="#btnBackClicked" styleClass="icon" text="&lt;" translateX="-430.0" translateY="-85.0" />
       <VBox fx:id="addTaskDialog" maxHeight="208.0" maxWidth="550.0" minHeight="200.0" prefHeight="208.0" prefWidth="550.0" styleClass="boxBorder" stylesheets="@styles.css" translateY="-100.0">
          <children>
-            <TextField maxWidth="300.0" promptText="Task Name" styleClass="textField" translateX="5.0" translateY="5.0" />
-            <TextField maxWidth="500.0" promptText="Task Description" styleClass="textField" translateX="5.0" translateY="10.0" />
+            <TextField fx:id="txt_Taskname" maxWidth="300.0" promptText="Task Name" styleClass="textField" translateX="5.0" translateY="5.0" />
+            <TextField fx:id="txt_TaskDesc" maxWidth="500.0" promptText="Task Description" styleClass="textField" translateX="5.0" translateY="10.0" />
             <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#btnCancelClicked" text="X" translateX="510.0" translateY="-85.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <TextField maxWidth="150.0" promptText="Priority" styleClass="textField" stylesheets="@styles.css" translateX="390.0" translateY="-15.0" />
+            <TextField fx:id="txt_TaskPriority" maxWidth="150.0" promptText="Priority" styleClass="textField" stylesheets="@styles.css" translateX="390.0" translateY="-15.0" />
             <ChoiceBox fx:id="taskType" prefWidth="150.0" styleClass="textField" translateX="5.0" translateY="-60.0" />
             <Button fx:id="saveButton" alignment="CENTER" mnemonicParsing="false" onAction="#btnSaveClicked" prefHeight="31.0" prefWidth="70.0" text="Save" translateX="240.0" translateY="-50.0">
                <font>
