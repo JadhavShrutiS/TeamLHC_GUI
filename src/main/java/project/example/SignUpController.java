@@ -32,7 +32,6 @@ public class SignUpController {
 
     @FXML
     private void btnSignUpClicked() throws IOException {
-        //App.setRoot("home"); //go to empty project board for user to create a project
         String firstName = txt_firstName.getText();
         String lastName = txt_lastName.getText();
         String email = txt_Email.getText();
@@ -66,7 +65,7 @@ public class SignUpController {
         {
             lbl_error.setText("Login Successful");
         }
-        //adds to json!!! doesn't do it yet
+        //adds to json!!!
         //projectFACADE.logout();
         App.setRoot("projectBoard");
         

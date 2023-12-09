@@ -82,13 +82,9 @@ public class NewProjectController implements Initializable {
         
         //test project buttons
         ArrayList<String> test = new ArrayList<String>();
-        test.add("1st project");
-        test.add("2nd project");
-        test.add("3rd project");
-        //test.add("4th project");
-        //test.add("5th project");
-        //test.add("6th project");
-        //test.add("7th project");
+        test.add("Bake a Cake");
+        test.add("Constructing a House");
+        test.add("Creating Testing Platform");
 
         StackPane stackPane = new StackPane();
         projectboard_layout.getChildren().add(stackPane);
@@ -98,7 +94,7 @@ public class NewProjectController implements Initializable {
         projectGrid.setTranslateY(-180);
         projectGrid.setMaxWidth(700);
         projectGrid.setHgap(150);
-        projectGrid.setVgap(100);
+        projectGrid.setVgap(20);
 
         projectboard_layout.getChildren().add(projectGrid);
     
@@ -108,7 +104,9 @@ public class NewProjectController implements Initializable {
                 //Button button = new Button(projects.get(i).getProjectName());
                 Button button = new Button(test.get(i));
                 Label label = new Label(test.get(i));
-                
+                button.setMinWidth(220);
+                button.setMinHeight(100);
+                button.wrapTextProperty().setValue(true);
                 int columnIndex=i-(3*rowIndex);
                 projectGrid.add(button,columnIndex, rowIndex);
                 

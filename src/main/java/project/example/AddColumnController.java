@@ -64,21 +64,28 @@ public class AddColumnController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
-        //lbl_projectName.setText(projectFACADE.getProject().getProjectName());
+        lbl_projectName.setText(projectFACADE.getProjectName());
 
         ArrayList<String> columns = new ArrayList<String>();
+        columns.add("Backlog");
         columns.add("To Do");
         columns.add("Doing");
         columns.add("Done");
-        columns.add("1");
-        columns.add("2");
 
-        ArrayList<String> tasks = new ArrayList<String>();
-        tasks.add("task1");
-        tasks.add("task2");
-        tasks.add("task3");
+        ArrayList<String> backlog = new ArrayList<String>();
+        backlog.add("Finalize presentation items");
+        backlog.add("Discard unused items");
 
-        lbl_projectName.setText("ProjectName");
+        ArrayList<String> toDo = new ArrayList<String>();
+        toDo.add("Read instructions");
+        toDo.add("Prep for task");
+
+        ArrayList<String> doing = new ArrayList<String>();
+        doing.add("Order Items");
+        
+        ArrayList<String> done = new ArrayList<String>();
+        done.add("Create Plan");
+        done.add("Finalize Measurements");
         StackPane stackPane = new StackPane();
         project_layout.getChildren().add(stackPane);
         ScrollPane scroll = new ScrollPane();
@@ -115,10 +122,26 @@ public class AddColumnController implements Initializable {
 
             vbox.setSpacing(10);
 
-            for(int j=0;j<tasks.size();j++)
+            ArrayList<String> var;
+            if(i==0)
             {
-                Label taskLabel = new Label(tasks.get(j));
+                var=backlog;
+            }
+            else if(i==1)
+            {
+                var=toDo;
+            }
+            else if(i==2)
+            {
+                var=doing;
+            }
+            else{var=done;}
+
+            for(int j=0;j<var.size();j++)
+            {
+                Label taskLabel = new Label(var.get(j));
                 taskLabel.setAlignment(Pos.TOP_LEFT);
+                taskLabel.wrapTextProperty().set(true);
                 String cssTaskLabel = "-fx-border-color: black;\n" +
                 "-fx-border-insets: 1;\n" +
                 "-fx-border-width: 1;\n" +
@@ -126,7 +149,7 @@ public class AddColumnController implements Initializable {
                 "-fx-background-color: #E4F5D3;\n";
                 taskLabel.setStyle(cssTaskLabel);
                 taskLabel.setMinHeight(100);
-                taskLabel.setMinWidth(200);
+                taskLabel.setMaxWidth(200);
                 vbox.getChildren().add(taskLabel);
             }
         }

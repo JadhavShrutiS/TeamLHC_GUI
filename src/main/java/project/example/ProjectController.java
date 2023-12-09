@@ -11,12 +11,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.ScrollPane.ScrollBarPolicy;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Paint;
 import model.ProjectFACADE;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -43,21 +39,29 @@ public class ProjectController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         ProjectFACADE projectFACADE = ProjectFACADE.getInstance();
-        //lbl_projectName.setText(projectFACADE.getProject().getProjectName());
+        lbl_projectName.setText(projectFACADE.getProjectName());
 
         ArrayList<String> columns = new ArrayList<String>();
+        columns.add("Backlog");
         columns.add("To Do");
         columns.add("Doing");
         columns.add("Done");
-        columns.add("1");
-        columns.add("2");
 
-        ArrayList<String> tasks = new ArrayList<String>();
-        tasks.add("task1");
-        tasks.add("task2");
-        tasks.add("task3");
+        ArrayList<String> backlog = new ArrayList<String>();
+        backlog.add("Finalize presentation items");
+        backlog.add("Discard unused items");
 
-        lbl_projectName.setText("ProjectName");
+        ArrayList<String> toDo = new ArrayList<String>();
+        toDo.add("Read instructions");
+        toDo.add("Prep for task");
+
+        ArrayList<String> doing = new ArrayList<String>();
+        doing.add("Order Items");
+        
+        ArrayList<String> done = new ArrayList<String>();
+        done.add("Create Plan");
+        done.add("Finalize Measurements");
+
         ScrollPane scroll = new ScrollPane();
         project_layout.getChildren().add(scroll);
         HBox hbox = new HBox();
@@ -92,10 +96,26 @@ public class ProjectController implements Initializable {
 
             vbox.setSpacing(10);
 
-            for(int j=0;j<tasks.size();j++)
+            ArrayList<String> var;
+            if(i==0)
             {
-                Label taskLabel = new Label(tasks.get(j));
+                var=backlog;
+            }
+            else if(i==1)
+            {
+                var=toDo;
+            }
+            else if(i==2)
+            {
+                var=doing;
+            }
+            else{var=done;}
+
+            for(int j=0;j<var.size();j++)
+            {
+                Label taskLabel = new Label(var.get(j));
                 taskLabel.setAlignment(Pos.TOP_LEFT);
+                taskLabel.wrapTextProperty().set(true);
                 String cssTaskLabel = "-fx-border-color: black;\n" +
                 "-fx-border-insets: 1;\n" +
                 "-fx-border-width: 1;\n" +
@@ -103,7 +123,7 @@ public class ProjectController implements Initializable {
                 "-fx-background-color: #E4F5D3;\n";
                 taskLabel.setStyle(cssTaskLabel);
                 taskLabel.setMinHeight(100);
-                taskLabel.setMinWidth(200);
+                taskLabel.setMaxWidth(200);
                 vbox.getChildren().add(taskLabel);
             }
             Button addTaskButton = new Button("+");
@@ -113,9 +133,6 @@ public class ProjectController implements Initializable {
                 @Override
                 public void handle(ActionEvent event) {
                     System.out.println(addTaskButton.getText()+ "was clicked");
-                    //set current project in facade by project name
-                    //projectFACADE.setCurrentProject(button.getText());
-                    //change screen
                     try {
                         App.setRoot("addTask");
                     } catch (IOException e) {
@@ -148,9 +165,6 @@ public class ProjectController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println(addColumnButton.getText()+ "was clicked");
-                //set current project in facade by project name
-                //projectFACADE.setCurrentProject(button.getText());
-                //change screen
                 try {
                     App.setRoot("addColumn");
                 } catch (IOException e) {

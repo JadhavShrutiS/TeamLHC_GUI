@@ -15,9 +15,12 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import model.*;
 
 public class ProjectBoardController implements Initializable {
+
+    private static final Font Font = null;
 
     @FXML
     private Label lbl_title;
@@ -67,9 +70,9 @@ public class ProjectBoardController implements Initializable {
         
         //test project buttons
         ArrayList<String> test = new ArrayList<String>();
-        test.add("1st project");
-        test.add("2nd project");
-        test.add("3rd project");
+        test.add("Bake a Cake");
+        test.add("Constructing a House");
+        test.add("Creating Testing Platform");
         //test.add("4th project");
         //test.add("5th project");
         //test.add("6th project");
@@ -78,8 +81,8 @@ public class ProjectBoardController implements Initializable {
         GridPane projectGrid = new GridPane();
         projectGrid.setTranslateY(-180);
         projectGrid.setMaxWidth(700);
-        projectGrid.setHgap(150);
-        projectGrid.setVgap(100);
+        projectGrid.setHgap(90);
+        projectGrid.setVgap(50);
 
         projectboard_layout.getChildren().add(projectGrid);
     
@@ -88,12 +91,11 @@ public class ProjectBoardController implements Initializable {
             for(int i=0; i < test.size(); i++) {
                 //Button button = new Button(projects.get(i).getProjectName());
                 Button button = new Button(test.get(i));
+
+                button.wrapTextProperty().setValue(true);
+                button.setMinWidth(220);
+                button.setMinHeight(100);
                 Label label = new Label(test.get(i));
-                //Rectangle rectangle = new Rectangle(150,150,Color.LAVENDER);
-                //rectangle.setTranslateY(80);
-                //rectangle.setArcHeight(50);
-                //rectangle.setArcWidth(50);
-                //System.out.println(projects.get(i).getProjectName());
                 
                 int columnIndex=i-(3*rowIndex);
                 //projectGrid.add(rectangle,columnIndex,rowIndex);
@@ -107,10 +109,8 @@ public class ProjectBoardController implements Initializable {
                     @Override
                     public void handle(ActionEvent event) {
                         System.out.println(button.getText()+ "was clicked");
-
                         //set current project in facade by project name
-                        //projectFACADE.setCurrentProject(button.getText());
-                        
+                        projectFACADE.saveProjectName(button.getText());
                         //change screen
                         try {
                             App.setRoot("project");

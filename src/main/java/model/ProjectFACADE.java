@@ -12,7 +12,17 @@ public class ProjectFACADE {
     private Project project;
     private Project currentProject;
     private static ProjectFACADE projectFACADE;
+    private String projectName;
 
+    public void saveProjectName(String name)
+    {
+        this.projectName=name;
+    }
+
+    public String getProjectName()
+    {
+        return projectName;
+    }
     public static ProjectFACADE getInstance()
     {
         if(projectFACADE==null)
